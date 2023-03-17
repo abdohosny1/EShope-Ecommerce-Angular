@@ -1,0 +1,51 @@
+<div class="d-flex justify-content-center mt-5">
+  <div class="col-3">
+
+    <main class="form-signin w-100 m-auto justify-content-center ">
+      <form [formGroup]="loginForm" #form="ngForm">
+        <div class="text-center font-weight-bold mb-4">
+          <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+        </div>
+
+        <app-text-input formControlName="email" [lable]=" 'Email Address '"></app-text-input>
+        <app-text-input formControlName="password" [lable]=" 'password '" [type]="'password'"></app-text-input>
+
+
+
+
+        <button (click)="validate()"  class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+
+        <p class="mt-5 mb-3 text-muted">© 2017–2022</p>
+      </form>
+    </main>
+  </div>
+  <!-- <div class="col-4">
+    <p>Form Status {{loginForm.status}}</p>
+    <p>Email Status {{loginForm.get("email")!.status}}</p>
+    <p>Email Touched {{loginForm.get("email")!.touched}}</p>
+    <p>Email Dirty {{loginForm.get("email")!.dirty}}</p>
+    <pre>{{loginForm.value|json}}</pre>
+
+
+
+  </div> -->
+</div>
+
+<!-- <div class="form-group">
+  <input type="email" formControlName="email" class="form-control"
+  id="floatingInput" placeholder="name@example.com"  required
+   [class.is-invalid]="email.invalid && email.touched">
+   <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback">
+    <small class="text-danger"  *ngIf="email.errors?.['required']">  Email Address is requried</small>
+    <small class="text-danger"  *ngIf="email.errors?.['pattern']">   Email Address is not valid</small>
+</div>
+</div>
+<div class="form-group">
+  <input formControlName="password" type="password" required
+  [class.is-invalid]="password.invalid && password.touched"
+   class="form-control" id="floatingPassword" placeholder="Password">
+   <div *ngIf="password.invalid && password.touched ">
+    <small class="text-danger"  *ngIf="password.errors?.['required']">   password is requried</small>
+</div>
+</div> -->
+

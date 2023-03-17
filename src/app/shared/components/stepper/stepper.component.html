@@ -1,0 +1,23 @@
+
+<!-- alert-heading alert alert-success bg-light px-4 py-3 text-uppercase fw-bold -->
+<div class="container ">
+  <ul class="nav nav-pills nav-justified  alert-heading alert alert-secondary bg-light">
+    <!-- <ul class="nav nav-pills nav-justified alert-heading alert alert-success bg-light  px-4 py-3  "> -->
+
+    <li class="nav-item" *ngFor="let step of steps let i=index">
+      <button
+      (click)="onClick(i)"
+      [disabled]="true"
+      [class.active]="selectedIndex === i"
+      class="nav-link py-2 text-uppercase  font-weight-bold  btn-secondary
+       fw-bold" style="padding: 1.20em;">
+      <!-- class="nav-link py-2 text-uppercase  font-weight-bold  btn-secondary
+      alert alert alert-success  fw-bold" style="padding: 1.20em;" -->
+              {{step.label}}
+      </button>
+    </li>
+  </ul>
+  <div>
+    <ng-container [ngTemplateOutlet]="selected!.content"></ng-container>
+  </div>
+</div>

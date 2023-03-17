@@ -1,0 +1,115 @@
+<div class="container-fluid g-0 m-0">
+
+
+<carousel>
+    <slide>
+        <img src="assets/hero1.jpg" alt="first slide" style="display: block; width: 100%;">
+    </slide>
+    <slide>
+        <img src="assets/hero2.jpg" alt="first slide" style="display: block; width: 100%;">
+    </slide>
+    <slide>
+        <img src="assets/hero3.jpg" alt="first slide" style="display: block; width: 100%;">
+    </slide>
+</carousel>
+
+<!-- <div class="featured container-fluid g-0 m-0" >
+ <div class="d-flex justify-content-center pt-4">
+  <h1>Welcome To The EShop!!</h1>
+ </div>
+
+
+</div> -->
+
+<div class="col-12 style_showmore px-3">
+  <span>Selected Just For You Brand :  NetCore</span>
+  <button>Show More</button>
+</div>
+
+<div class="container-fluid g-0 px-3 ">
+  <div class="col-md-12">
+  <swiper
+  [slidesPerView]="4"
+  [spaceBetween]="50"
+  [navigation]="true"
+  [breakpoints]="breakpoints"
+  [pagination]="{ clickable: true }"
+  [scrollbar]="{ draggable: true }"
+>
+<ng-container *ngFor="let item of product ">
+<ng-template swiperSlide *ngIf="item.productBrand == 'NetCore'">
+  <div class="card card-border-none resp-wrap-align-center">
+    <img
+      src="{{ item.pictureUrl }}"
+      class="card-img-top img-fluid rounded"
+      alt="..."  />
+
+    <div class="card-body">
+      <div class="overflow-hidden">
+        <h5
+          class="card-title fs-6 d-inline-block text-truncate font-monospace text-start text-primary"
+        >
+          {{ item.name }}
+        </h5>
+      </div>
+      <div class="styleprice">
+        <p class="font-monospace text-start text-primary" >{{item.productType}}</p>
+        <p class="card-text text-muted">{{ "$ " + item.price }}</p>
+      </div>
+    </div>
+
+  </div>
+</ng-template>
+</ng-container>
+</swiper>
+ </div>
+ </div>
+
+ <div class="col-12 style_showmore px-3">
+  <span>Selected Just For You Brand : Angular</span>
+  <button>Show More</button>
+</div>
+
+
+<div class="container-fluid g-0 px-3 ">
+  <div class="col-md-12">
+  <swiper
+  [slidesPerView]="4"
+  [spaceBetween]="50"
+  [navigation]="true"
+  [breakpoints]="breakpoints"
+  [pagination]="{ clickable: true }"
+  [scrollbar]="{ draggable: true }"
+>
+<ng-container *ngFor="let item of product ">
+<ng-template swiperSlide *ngIf="item.productBrand == 'Angular'">
+  <div class="card card-border-none resp-wrap-align-center">
+    <img
+      src="{{ item.pictureUrl }}"
+      class="card-img-top img-fluid rounded"
+      alt="..."  />
+
+    <div class="card-body">
+      <div class="overflow-hidden">
+        <h5
+          class="card-title fs-6 d-inline-block text-truncate font-monospace text-start text-primary"
+        >
+          {{ item.name }}
+        </h5>
+      </div>
+      <div class="styleprice">
+        <p class="font-monospace text-start text-primary" >{{item.productType}}</p>
+        <p class="card-text text-muted">{{ "$ " + item.price }}</p>
+      </div>
+    </div>
+
+  </div>
+</ng-template>
+</ng-container>
+</swiper>
+ </div>
+ </div>
+
+</div>
+
+

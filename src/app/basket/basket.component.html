@@ -1,0 +1,57 @@
+
+
+<!-- id: number;
+productName: string;
+price: number;
+quentity: number;
+pictureURL: string;
+brand: string;
+type: string; -->
+<div class="container mt-2">
+
+    <div *ngIf="(basket$| async) === null">
+        <div class=" position-absolute top-50 start-50">
+            <img src="https://www.metro-markets.com/plugins/user/images/emptycart.png" width="200" height="200" alt="">
+            <h4>Your cart is empty!</h4>
+            <h6>Add item to it now</h6>
+            <button routerLink="/product" class="btn btn-primary ">SHOP NOW</button>
+        </div>
+
+
+    </div>
+
+
+    <div *ngIf="(basket$ | async) ">
+        <div class="pb-5">
+            <div class="container">
+                <div class="row">
+                       <div class="col-12 py-5 mb-1">
+                      <app-basket-summary
+                      (decrement)="deincrementQuentity($event)"
+                      (incremant)="incrementQuentity($event)"
+                      (remove)="removeBasketItem($event)"
+                      >
+
+                      </app-basket-summary>
+                       </div>
+                </div>
+                <div class="row">
+                  <div class="col-6 offset-6">
+                    <app-order-total></app-order-total>
+                    <a  style="width: 100%;" routerLink="/checkout" class="btn btn-outline-primary py-2 btn-block"
+                    tabindex="-1" role="button" aria-disabled="true">
+                      Proceed to Checkout
+
+                    </a>
+
+                  </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="mt-4" [formGroup]="checkOutForm">
+
+  <h4 class="mb-3">Choose Your Delivery Method</h4>
+  <div class="row ms-3" formGroupName="deliverForm">
+
+    <div class="col-6 form-group" *ngFor="let item of deliveryMetho"  >
+      <input type="radio"
+        id="{{item.id}}"
+        (click)="setShippingPrice(item)"
+        value="={{item.id}}"
+        formControlName="deliveryMethod"
+        class="form-check-input mx-2" >
+      <label for="{{item.id}}" class="form-check-label">
+        <strong>{{item.shortName}} -{{item.price |currency}}</strong>
+        <br>
+        <span class="form-check-label">{{item.description}}</span>
+      </label>
+       </div>
+
+  </div>
+  </div>
+
+  <div class="float-none d-flex justify-content-between flex-column flex-lg-row mb-1 mt-4">
+    <button class="btn btn-outline-primary" cdkStepperPrevious>
+      <i class="fa fa-angle-left"></i> Back To Address
+    </button>
+
+    <button [disabled]="checkOutForm.get('deliverForm')?.invalid" class="btn btn-primary" cdkStepperNext>
+     Go To Review <i class="fa fa-angle-right"></i>
+    </button>
+  </div>
